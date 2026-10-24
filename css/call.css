@@ -1,0 +1,67 @@
+/* ===== Panggilan (masuk & berlangsung) ===== */
+.call-screen {
+  position: absolute; inset: 0; z-index: 85; color: #fff;
+  display: flex; flex-direction: column; align-items: center;
+  padding: 64px 24px 44px; text-align: center;
+  background: linear-gradient(175deg, #7b7463 0%, #5b5f63 45%, #33455a 100%);
+  animation: csIn .4s cubic-bezier(.2, .8, .2, 1) both;
+  transition: opacity .3s ease, background .4s ease;
+}
+.call-screen.active { background: linear-gradient(#1b1b1f, #0b0b0d); }
+.call-screen.out { opacity: 0; }
+@keyframes csIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Panggilan masuk */
+.call-screen.incoming { justify-content: space-between; }
+.cs-kind { font-size: 16px; color: rgba(255, 255, 255, .7); }
+.cs-name { font-size: 32px; font-weight: 700; margin-top: 6px; }
+.cs-extra { display: flex; gap: 70px; }
+.cs-mini { display: flex; flex-direction: column; align-items: center; gap: 8px; font-size: 13px; }
+.cs-mini-circle {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: rgba(255, 255, 255, .22); display: grid; place-items: center; font-size: 24px;
+}
+.cs-bottom { width: 100%; display: flex; justify-content: space-around; }
+.cs-act { display: flex; flex-direction: column; align-items: center; gap: 12px; font-size: 15px; }
+.cs-circle {
+  width: 80px; height: 80px; border-radius: 50%;
+  display: grid; place-items: center; border: 1px solid rgba(255, 255, 255, .35);
+}
+.cs-circle.decline { background: #d92b2b; }
+.cs-circle.accept { background: #1e63d6; }
+.cs-circle:active { transform: scale(.94); }
+
+/* Panggilan berlangsung */
+.cs-top { display: flex; flex-direction: column; align-items: center; }
+.cs-timer { font-size: 16px; color: rgba(255, 255, 255, .7); margin-top: 6px; font-variant-numeric: tabular-nums; }
+.cs-avatar {
+  width: 220px; height: 220px; border-radius: 50%; margin-top: 36px;
+  background-size: cover; background-position: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .4);
+}
+.cs-lines {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  width: 100%; max-width: 320px; min-height: 130px; margin-top: 30px;
+}
+.cs-line {
+  max-width: 100%; background: rgba(255, 255, 255, .14);
+  padding: 8px 14px; border-radius: 16px; font-size: 16px; line-height: 1.35;
+  animation: lineIn .35s ease both;
+}
+@keyframes lineIn {
+  from { opacity: 0; transform: translateY(8px) scale(.96); }
+  to { opacity: 1; transform: none; }
+}
+.cs-controls {
+  margin-top: auto; display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 18px 10px; width: 100%; max-width: 330px;
+}
+.cs-ctrl { display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 13px; }
+.cs-ctrl-circle {
+  width: 66px; height: 66px; border-radius: 50%;
+  background: rgba(255, 255, 255, .16); display: grid; place-items: center; font-size: 24px;
+}
+.cs-ctrl-circle.end { background: #d0021b; }

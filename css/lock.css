@@ -1,0 +1,82 @@
+/* ===== Layar kunci ===== */
+.lock {
+  display: flex; flex-direction: column; align-items: center;
+  padding-top: 72px; text-align: center; text-shadow: 0 1px 10px rgba(0, 0, 0, .2);
+}
+.lock-date { font-size: 19px; font-weight: 600; }
+.lock-time {
+  font-size: 96px; font-weight: 600; letter-spacing: -1px; line-height: 1.05;
+  font-variant-numeric: tabular-nums;
+}
+.lock-hint {
+  position: absolute; bottom: 104px; left: 0; right: 0;
+  font-size: 15px; font-weight: 500; opacity: .85;
+}
+.lock-tools {
+  position: absolute; bottom: 30px; left: 44px; right: 44px;
+  display: flex; justify-content: space-between;
+}
+.round {
+  width: 50px; height: 50px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: rgba(40, 40, 44, .45); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+}
+
+/* ===== Notifikasi lockscreen (bubble bertumpuk) ===== */
+.notif-stack {
+  position: absolute; left: 10px; right: 10px; bottom: 150px;
+  display: flex; flex-direction: column; gap: 8px;
+  z-index: 5;
+}
+.notif {
+  display: flex; gap: 10px; align-items: center;
+  padding: 12px; border-radius: 22px;
+  background: rgba(240, 240, 245, .88);
+  backdrop-filter: blur(30px) saturate(180%); -webkit-backdrop-filter: blur(30px) saturate(180%);
+  color: #000; text-align: left; text-shadow: none;
+  opacity: 0; transform: translateY(-30px) scale(.96);
+  transition: opacity .45s ease, transform .5s cubic-bezier(.2, .9, .3, 1.2);
+}
+.notif.show { opacity: 1; transform: none; }
+.notif-av { width: 40px; height: 40px; border-radius: 9px; flex: none; }
+.notif-body { flex: 1; min-width: 0; font-size: 15px; }
+.notif-row { display: flex; justify-content: space-between; align-items: baseline; font-size: 14px; font-weight: 600; }
+.notif-row span { color: #8e8e93; font-size: 12px; font-weight: 400; }
+.notif-msg { margin-top: 2px; color: #1c1c1e; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* ===== Keypad PIN ===== */
+.passcode { display: flex; flex-direction: column; align-items: center; padding-top: 110px; }
+.pc-title { font-size: 17px; font-weight: 500; margin-bottom: 26px; }
+.pc-dots { display: flex; gap: 22px; margin-bottom: 64px; }
+.pc-dot { width: 14px; height: 14px; border-radius: 50%; border: 1.5px solid #fff; transition: background .15s, border-color .15s; }
+.pc-dot.filled { background: #fff; }
+.pc-dots.ok .pc-dot { background: var(--green); border-color: var(--green); }
+.pc-dots.shake { animation: shake .45s; }
+@keyframes shake {
+  10%, 90% { transform: translateX(-2px); }
+  20%, 80% { transform: translateX(4px); }
+  30%, 50%, 70% { transform: translateX(-8px); }
+  40%, 60% { transform: translateX(8px); }
+}
+.pc-keys { display: grid; grid-template-columns: repeat(3, 80px); gap: 14px 20px; }
+.pc-key {
+  width: 80px; height: 80px; border-radius: 50%;
+  background: rgba(120, 120, 128, .45);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  transition: background .12s;
+}
+.pc-key:active { background: rgba(200, 200, 210, .75); }
+.pc-num { font-size: 34px; line-height: 1; }
+.pc-letters { font-size: 10px; letter-spacing: 2px; margin-top: 3px; font-weight: 600; }
+.pc-del { background: none !important; }
+.pc-spacer { width: 80px; height: 80px; }
+.pc-cancel { margin-top: 30px; font-size: 17px; }
+
+/* ===== Wallpaper lockscreen diburamkan saat keypad muncul ===== */
+#wpLock {
+  transition: opacity .6s ease, transform .9s cubic-bezier(.2, .8, .2, 1), filter .45s ease;
+}
+#wpLock.blurred {
+  filter: blur(22px) brightness(.7);
+  transform: scale(1.08);
+}

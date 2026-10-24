@@ -1,0 +1,131 @@
+// =====================================================================
+// CHAT WINAY–NINGNING
+// Berawal curhat soal Maxwell & Karel
+// Ningning kirim foto toko roti, Winay gabisa nyamperin
+// =====================================================================
+const CHAT_HAERIN = {
+  id: 'haerin',
+  name: 'Ningning',
+  group: false,
+  unread: 0,
+  avatar: CONFIG.profile.haerin,
+  color: PEOPLE.haerin.color,
+  messages: [
+    // Awal curhat
+    { from: 'hanni', time: '2026-07-17T00:12:00', text: 'Ning', read: true },
+    { from: 'hanni', time: '2026-07-17T00:12:30', text: 'Gue mau curhat', read: true },
+    { from: 'haerin', time: '2026-07-17T00:14:00', text: 'Langsung aja. Kenapa?', read: true },
+    { from: 'hanni', time: '2026-07-17T00:15:00', text: 'Maxwell berak depan pintu tetangga gue lagi', read: true },
+    { from: 'hanni', time: '2026-07-17T00:15:30', text: 'Terus tetangga gue marah banget', read: true },
+    { from: 'haerin', time: '2026-07-17T00:16:00', text: 'Yang cepet marah itu kan?', read: true },
+    { from: 'hanni', time: '2026-07-17T00:17:00', text: 'Iya Karel', read: true },
+    { from: 'hanni', time: '2026-07-17T00:17:20', text: 'Dia bilang “kamar gue bukan playground dia”', read: true },
+    { from: 'haerin', time: '2026-07-17T00:18:00', text: 'Kasian. Tapi Maxwell emang sering kabur sih.', read: true },
+    { from: 'hanni', time: '2026-07-17T00:19:00', text: 'Gue udah dikunci pintu tapi dia tetap bisa masuk', read: true },
+    { from: 'haerin', time: '2026-07-17T00:20:00', text: 'Anjing pintar emang ngeselin.', read: true },
+
+    // Ningning undang ke toko roti
+    { from: 'haerin', time: '2026-07-20T15:30:00', text: 'Winay, lo free ga weekend ini?', read: true },
+    { from: 'hanni', time: '2026-07-20T15:32:00', text: 'Harusnya iya kenapa?', read: true },
+    { from: 'haerin', time: '2026-07-20T15:33:00', text: 'Mampir ke toko gue yuk. Gue lagi buka shift siang.', read: true },
+    { from: 'hanni', time: '2026-07-20T15:34:00', text: 'Toko roti???', read: true },
+    { from: 'haerin', time: '2026-07-20T15:35:00', text: 'Iya. Ini tempatnya.', read: true },
+    {
+      from: 'haerin',
+      time: '2026-07-20T15:36:00',
+      type: 'photo',
+      photos: [{ src: 'assets/line/ningning-bakery.jpg', color: '#2c2416' }],
+      caption: 'Toko gue. Dateng ya.',
+      read: true
+    },
+    { from: 'hanni', time: '2026-07-20T15:38:00', text: 'Cakep banget 😭', read: true },
+    { from: 'hanni', time: '2026-07-20T15:39:00', text: 'Tapi Ning… gue gabisa', read: true },
+    { from: 'haerin', time: '2026-07-20T15:40:00', text: 'Kenapa?', read: true },
+    { from: 'hanni', time: '2026-07-20T15:41:00', text: 'Weekend ini gue jaga Maxwell full. Dia lagi sering kabur ke kamar Karel, gue takut ditinggal', read: true },
+    { from: 'haerin', time: '2026-07-20T15:42:00', text: 'Bawa aja Maxwell ke sini.', read: true },
+    { from: 'hanni', time: '2026-07-20T15:43:00', text: 'Toko roti ga boleh bawa anjing 😭', read: true },
+    { from: 'haerin', time: '2026-07-20T15:44:00', text: 'Ya udah. Lain kali aja.', read: true },
+    { from: 'hanni', time: '2026-07-20T15:45:00', text: 'Maaf Ning 🤍 gue janji bakalan mampir', read: true },
+    { from: 'haerin', time: '2026-07-20T15:46:00', text: 'Iya iya. Jaga anjing lo aja dulu.', read: true },
+
+    // Lanjut curhat Karel
+    { from: 'hanni', time: '2026-07-28T22:40:00', text: 'Ning gue aneh ga sih', read: true },
+    { from: 'haerin', time: '2026-07-28T22:42:00', text: 'Kenapa lagi.', read: true },
+    { from: 'hanni', time: '2026-07-28T22:43:00', text: 'Setiap Maxwell masuk kamar Karel, gue malah… senang dikit', read: true },
+    { from: 'haerin', time: '2026-07-28T22:44:00', text: '???', read: true },
+    { from: 'hanni', time: '2026-07-28T22:45:00', text: 'Karena ada alasan chat dia', read: true },
+    { from: 'haerin', time: '2026-07-28T22:46:00', text: 'Winay.', read: true },
+    { from: 'hanni', time: '2026-07-28T22:47:00', text: 'APA', read: true },
+    { from: 'haerin', time: '2026-07-28T22:48:00', text: 'Lo suka tetangga lo.', read: true },
+    { from: 'hanni', time: '2026-07-28T22:49:00', text: 'ENGGAK', read: true },
+    { from: 'haerin', time: '2026-07-28T22:50:00', text: 'Iya.', read: true },
+    { from: 'hanni', time: '2026-07-28T22:51:00', text: 'Dia kasar 😭', read: true },
+    { from: 'haerin', time: '2026-07-28T22:52:00', text: 'Tapi lo tetep minta maaf tiap hari.', read: true },
+    { from: 'hanni', time: '2026-07-28T22:53:00', text: '…', read: true },
+
+    // Karel mulai lembut
+    { from: 'hanni', time: '2026-08-04T08:10:00', text: 'NING', read: true },
+    { from: 'hanni', time: '2026-08-04T08:10:20', text: 'Maxwell tidur di sofa Karel semalam', read: true },
+    { from: 'hanni', time: '2026-08-04T08:10:40', text: 'Dan dia GA USIR', read: true },
+    { from: 'haerin', time: '2026-08-04T08:12:00', text: 'Oh? Yang dulu mau bawa ke satpam?', read: true },
+    { from: 'hanni', time: '2026-08-04T08:13:00', text: 'Iya 😭 dia bilang “males ribut”', read: true },
+    { from: 'haerin', time: '2026-08-04T08:14:00', text: 'Classic gengsi.', read: true },
+    { from: 'hanni', time: '2026-08-04T08:15:00', text: 'Gue mau mati', read: true },
+    { from: 'haerin', time: '2026-08-04T08:16:00', text: 'Kenapa?', read: true },
+    { from: 'hanni', time: '2026-08-04T08:17:00', text: 'Karena gue seneng banget padahal dia cuma bilang males', read: true },
+    { from: 'haerin', time: '2026-08-04T08:18:00', text: 'Lo parah.', read: true },
+    { from: 'hanni', time: '2026-08-04T08:19:00', text: 'IYA GUE TAU 😭', read: true },
+
+    // Ningning tanya lagi soal mampir
+    { from: 'haerin', time: '2026-08-15T16:20:00', text: 'Winay, weekend ini Maxwell masih rewel?', read: true },
+    { from: 'hanni', time: '2026-08-15T16:22:00', text: 'Masih… dia malah lebih sering di kamar Karel sekarang', read: true },
+    { from: 'haerin', time: '2026-08-15T16:23:00', text: 'Jadi lo masih gabisa mampir?', read: true },
+    { from: 'hanni', time: '2026-08-15T16:24:00', text: 'Maaf Ning 😭 gue beneran pengen dateng', read: true },
+    { from: 'haerin', time: '2026-08-15T16:25:00', text: 'Gapapa. Gue simpenin roti yang enak kalo lo jadi datang.', read: true },
+    { from: 'hanni', time: '2026-08-15T16:26:00', text: 'Ning baik banget 🤍', read: true },
+    { from: 'haerin', time: '2026-08-15T16:27:00', text: 'Iya iya. Update soal tetangga lo aja.', read: true },
+
+    // Curhat lebih dalam
+    { from: 'hanni', time: '2026-08-19T00:05:00', text: 'Ning gue serius deh', read: true },
+    { from: 'hanni', time: '2026-08-19T00:05:30', text: 'Dia bilang “gue cuma kasihan sama anjinya, bukan sama lo”', read: true },
+    { from: 'haerin', time: '2026-08-19T00:07:00', text: 'Dan lo percaya?', read: true },
+    { from: 'hanni', time: '2026-08-19T00:08:00', text: 'Engga… tapi gue senyum sendiri', read: true },
+    { from: 'haerin', time: '2026-08-19T00:09:00', text: 'Winay Rebecca.', read: true },
+    { from: 'hanni', time: '2026-08-19T00:10:00', text: 'Jangan full name 😭', read: true },
+    { from: 'haerin', time: '2026-08-19T00:11:00', text: 'Lo udah jatuh.', read: true },
+    { from: 'hanni', time: '2026-08-19T00:12:00', text: 'Gue cuma… nyaman chat dia', read: true },
+    { from: 'haerin', time: '2026-08-19T00:13:00', text: 'Padahal awalnya lo bilang dia jutek.', read: true },
+    { from: 'hanni', time: '2026-08-19T00:14:00', text: 'Iya jutek. Tapi juteknya lucu sekarang', read: true },
+    { from: 'haerin', time: '2026-08-19T00:15:00', text: 'Lo sakit.', read: true },
+
+    // Setelah hampir jujur
+    { from: 'hanni', time: '2026-09-22T23:40:00', text: 'Ning', read: true },
+    { from: 'hanni', time: '2026-09-22T23:40:20', text: 'Dia bilang “setiap lo minta maaf gue malah ga bisa marah”', read: true },
+    { from: 'haerin', time: '2026-09-22T23:42:00', text: 'Itu udah hampir ngaku.', read: true },
+    { from: 'hanni', time: '2026-09-22T23:43:00', text: 'Terus dia bilang “jangan bikin gue bilang lebih dari itu”', read: true },
+    { from: 'haerin', time: '2026-09-22T23:44:00', text: 'Gengsi berat.', read: true },
+    { from: 'hanni', time: '2026-09-22T23:45:00', text: 'Gue juga gengsi 😭', read: true },
+    { from: 'haerin', time: '2026-09-22T23:46:00', text: 'Jadi kalian berdua gengsi?', read: true },
+    { from: 'hanni', time: '2026-09-22T23:47:00', text: 'IYA', read: true },
+    { from: 'haerin', time: '2026-09-22T23:48:00', text: 'Kasihan Maxwell. Jadi alat deket-deketan.', read: true },
+    { from: 'hanni', time: '2026-09-22T23:49:00', text: 'JANGAN BILANG GITU 😭 dia emang suka kamar Karel', read: true },
+    { from: 'haerin', time: '2026-09-22T23:50:00', text: 'Atau Karel yang bikin nyaman?', read: true },
+    { from: 'hanni', time: '2026-09-22T23:51:00', text: '…diam', read: true },
+
+    // Sekarang
+    { from: 'hanni', time: '2026-10-22T15:20:00', text: 'Ning dia chat lagi', read: true },
+    { from: 'hanni', time: '2026-10-22T15:20:20', text: '“Ambil sebelum gue bawa tidur bareng”', read: true },
+    { from: 'haerin', time: '2026-10-22T15:22:00', text: 'WOW.', read: true },
+    { from: 'hanni', time: '2026-10-22T15:23:00', text: 'Itu ancaman atau godaan sih???', read: true },
+    { from: 'haerin', time: '2026-10-22T15:24:00', text: 'Dua-duanya. Lo ambil sekarang atau nunggu dia beneran bawa tidur?', read: true },
+    { from: 'hanni', time: '2026-10-22T15:25:00', text: 'GUE BINGUNG 😭', read: true },
+    { from: 'haerin', time: '2026-10-22T15:26:00', text: 'Lo suka dia. Dia juga. Cuma kalian berdua tolol sama gengsi.', read: true },
+    { from: 'hanni', time: '2026-10-22T15:27:00', text: 'Kasar banget', read: true },
+    { from: 'haerin', time: '2026-10-22T15:28:00', text: 'Tapi bener. Sekarang ambil Maxwell atau lo mau gue yang anter?', read: true },
+    { from: 'hanni', time: '2026-10-22T15:29:00', text: 'Gue ambil sendiri…', read: true },
+    { from: 'haerin', time: '2026-10-22T15:30:00', text: 'Good. Jangan cuma ambil anjingnya. Ambil juga kesempatan ngobrol.', read: true },
+    { from: 'hanni', time: '2026-10-22T15:31:00', text: 'Iya Ning 🤍 makasih', read: true },
+    { from: 'haerin', time: '2026-10-22T15:32:00', text: 'Sama-sama. Kalo udah beres, mampir ke toko gue ya. Janji.', read: true },
+    { from: 'hanni', time: '2026-10-22T15:33:00', text: 'Janji 🤍', read: true },
+  ],
+};

@@ -1,0 +1,71 @@
+/* =====================================================================
+   HOME SCREEN: widget, grid ikon, dock, dan badge notifikasi
+   ===================================================================== */
+
+/* ----- Widget ----- */
+.home { padding: 62px 16px 0; }
+.widgets { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 26px; }
+.widget {
+  background: rgba(40, 40, 44, .55);
+  backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+  border-radius: 24px; padding: 16px; min-height: 158px;
+  display: flex; flex-direction: column;
+}
+.cal-dow { font-size: 13px; font-weight: 700; color: #ff453a; text-transform: uppercase; letter-spacing: .3px; }
+.cal-date { font-size: 66px; font-weight: 300; line-height: 1; margin: 4px 0 6px; }
+.cal-month { font-size: 13px; opacity: .85; }
+.wx-city { font-size: 14px; font-weight: 600; }
+.wx-temp { font-size: 48px; font-weight: 300; line-height: 1.1; margin-top: 4px; }
+.wx-row { display: flex; align-items: center; gap: 6px; font-size: 13px; margin-top: auto; opacity: .9; }
+.wx-cond { font-size: 13px; opacity: .85; margin-top: 6px; }
+
+/* ----- Grid ikon aplikasi (di atas dock) ----- */
+.app-grid {
+  position: absolute; left: 20px; right: 20px; bottom: 140px;
+  display: grid; grid-template-columns: repeat(4, 76px);
+  justify-content: space-between; row-gap: 22px; margin: 0;
+}
+.app-icon {
+  width: 76px; display: flex; flex-direction: column; align-items: center; gap: 6px;
+  text-align: center; transition: transform .12s ease, opacity .12s ease;
+}
+.app-icon:active { transform: scale(.82); opacity: .75; }
+
+/* Kotak ikon: ukuran dan bentuk. Dulu aturan ini hilang sehingga ikon tidak terlihat */
+.app-tile {
+  position: relative;
+  width: 62px; height: 62px; border-radius: 14px;
+  display: grid; place-items: center;
+  background-size: cover; background-position: center; background-repeat: no-repeat;
+  box-shadow: inset 0 0 0 .5px rgba(255, 255, 255, .25), 0 3px 8px rgba(0, 0, 0, .25);
+}
+.icon-label {
+  display: block; width: 100%; text-align: center;
+  font-size: 12px; font-weight: 500; white-space: nowrap;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+}
+
+/* Badge notifikasi merah (LINE) */
+.app-badge {
+  position: absolute; top: -6px; right: -6px;
+  min-width: 20px; height: 20px; padding: 0 6px; border-radius: 10px;
+  background: #ff3b30; color: #fff; font-size: 12px; font-weight: 700;
+  display: none; place-items: center;
+  box-shadow: 0 0 0 2px #fff;
+}
+
+/* ----- Dock ----- */
+.dock {
+  position: absolute; left: 12px; right: 12px; bottom: 28px; height: 98px; border-radius: 36px;
+  background: rgba(255, 255, 255, .2);
+  backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+  display: grid; grid-template-columns: repeat(4, 1fr); place-items: center;
+}
+.dock .app-icon { width: auto; }
+.dock .icon-label { display: none; }
+.dock .app-tile { width: 64px; height: 64px; }
+
+/* ----- HP: efek kaca dikurangi agar lebih ringan ----- */
+@media (max-width: 520px) {
+  .dock, .widget, .app-header, .notif { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+}

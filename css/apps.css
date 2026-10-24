@@ -1,0 +1,354 @@
+/* ===== Catatan ===== */
+.note-doc { background: #fff; margin: 6px 16px 0; border-radius: 12px; padding: 16px 18px 40px; min-height: 200px; }
+.note-date { font-size: 12px; color: var(--gray); text-align: center; margin-bottom: 14px; }
+.note-title { font-size: 24px; font-weight: 700; margin-bottom: 12px; }
+.note-body { font-size: 17px; line-height: 1.55; white-space: pre-wrap; }
+
+/* ===== Galeri ===== */
+.month-title { font-size: 17px; font-weight: 700; padding: 18px 16px 8px; }
+.photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+.photo-cell { aspect-ratio: 1; transition: opacity .15s; }
+.photo-cell:active { opacity: .7; }
+
+/* ===== Apple Music ===== */
+.pl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; padding: 0 16px; }
+.pl-cover { width: 100%; aspect-ratio: 1; border-radius: 12px; margin-bottom: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, .12); }
+.pl-title { font-size: 15px; font-weight: 600; }
+.pl-head { text-align: center; padding: 8px 20px 18px; }
+.pl-cover.big { width: 200px; margin: 0 auto 14px; }
+.pl-title.big { font-size: 22px; }
+.song-art { width: 44px; height: 44px; border-radius: 6px; flex: none; }
+.num { width: 18px; color: var(--gray); font-size: 14px; text-align: center; }
+
+/* ===== Pengaturan ===== */
+.toggle { width: 51px; height: 31px; border-radius: 16px; background: #e9e9ea; position: relative; flex: none; margin-left: auto; }
+.toggle::after {
+  content: ""; position: absolute; top: 2px; left: 2px; width: 27px; height: 27px; border-radius: 50%;
+  background: #fff; box-shadow: 0 2px 4px rgba(0, 0, 0, .25); transition: left .2s;
+}
+.toggle.on { background: var(--green); }
+.toggle.on::after { left: 22px; }
+.avatar-md { width: 60px; height: 60px; border-radius: 50%; flex: none; }
+
+/* ===== Safari ===== */
+.search-box {
+  margin: 6px 16px 0; background: #e3e3e8; border-radius: 10px; padding: 9px 12px;
+  display: flex; gap: 8px; align-items: center; color: var(--gray);
+}
+.search-box input { border: 0; background: transparent; width: 100%; outline: none; font-size: 17px; color: #000; }
+.web-doc { background: #fff; margin: 14px 16px 0; border-radius: 12px; padding: 18px; }
+.web-url { font-size: 13px; color: var(--gray); margin-bottom: 8px; }
+.web-title { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+.web-blurb { font-size: 16px; line-height: 1.6; color: #333; }
+.web-note { margin: 16px; font-size: 13px; color: var(--gray); text-align: center; }
+
+/* ===== Kamera ===== */
+.cam-wrap { padding-top: 16px; }
+.vf {
+  position: relative; width: min(300px, 88%); aspect-ratio: 3 / 4; margin: 0 auto;
+  border-radius: 16px; overflow: hidden; background: #151517;
+}
+.vf video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.vf-ph {
+  position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center;
+  justify-content: center; text-align: center; color: #888; font-size: 13px; padding: 16px;
+}
+.vf-ph code { font-size: 11px; color: #aaa; }
+.vf.flash::after { content: ""; position: absolute; inset: 0; background: #fff; animation: flash .35s ease-out forwards; }
+@keyframes flash { from { opacity: .9; } to { opacity: 0; } }
+.cam-modes { display: flex; justify-content: center; gap: 22px; margin: 18px 0; font-size: 13px; letter-spacing: 1px; color: #aaa; font-weight: 600; }
+.cam-modes .on { color: #ffd60a; }
+.cam-bar { display: flex; justify-content: space-between; align-items: center; padding: 0 40px; }
+.thumb { width: 44px; height: 44px; border-radius: 8px; border: 2px solid #fff; }
+.shutter {
+  width: 74px; height: 74px; border-radius: 50%; border: 4px solid #fff; background: #fff;
+  box-shadow: inset 0 0 0 4px #000; transition: transform .1s;
+}
+.shutter:active { transform: scale(.92); }
+.spacer { width: 44px; }
+
+/* ===== Instagram (tampilan dark) ===== */
+.ig-page { padding-bottom: 0; color: #f5f5f5; }
+
+.ig-top { display: flex; align-items: center; justify-content: space-between; padding: 8px 18px 4px; }
+.ig-top-ico { width: 34px; display: flex; justify-content: center; }
+.ig-user-title { display: flex; align-items: center; gap: 6px; font-size: 19px; font-weight: 700; }
+.ig-verified { width: 16px; height: 16px; border-radius: 50%; background: #0095f6; display: grid; place-items: center; }
+
+.ig-head { display: flex; align-items: center; gap: 24px; padding: 14px 18px 6px; }
+.ig-avwrap { position: relative; flex: none; margin-top: 10px; }
+.ig-av { width: 90px; height: 90px; border-radius: 50%; border: .5px solid #333; }
+.ig-note {
+  position: absolute; top: -24px; left: -14px; width: 112px; padding: 8px 10px;
+  background: #2c2c2e; color: #f5f5f5; font-size: 12px; line-height: 1.2; text-align: center;
+  border-radius: 16px; box-shadow: 0 2px 6px rgba(0, 0, 0, .5);
+}
+.ig-plus {
+  position: absolute; right: -4px; bottom: -2px; width: 28px; height: 28px; border-radius: 50%;
+  background: #f5f5f5; display: grid; place-items: center; border: 3px solid #000;
+}
+.ig-stats { display: flex; flex: 1; justify-content: space-between; text-align: center; }
+.ig-stats b { display: block; font-size: 19px; font-weight: 700; }
+.ig-stats span { font-size: 14px; color: #f5f5f5; }
+
+.ig-name { padding: 4px 18px 0; font-size: 15px; font-weight: 700; }
+.ig-name span { color: #8e8e93; font-weight: 400; margin-left: 6px; }
+.ig-bio-line { padding: 2px 18px 0; font-size: 15px; line-height: 1.4; white-space: pre-line; }
+.ig-link { display: flex; align-items: center; gap: 8px; padding: 10px 18px 0; font-size: 15px; font-weight: 600; color: #e0f1ff; }
+.ig-music {
+  display: inline-flex; align-items: center; gap: 8px; margin: 12px 18px 0; padding: 8px 14px;
+  border: 1px solid #3a3a3c; border-radius: 20px; font-size: 14px;
+}
+.ig-music span { color: #8e8e93; }
+
+.ig-dash { margin: 14px 16px 0; background: #1c1c1e; border-radius: 14px; padding: 14px 16px; }
+.ig-dash b { font-size: 16px; }
+.ig-dash span { display: block; font-size: 14px; color: #8e8e93; margin-top: 4px; }
+
+.ig-btns { display: flex; gap: 8px; margin: 12px 16px 0; }
+.ig-btn {
+  flex: 1; height: 36px; border-radius: 10px; background: #262628;
+  font-size: 15px; font-weight: 600; display: grid; place-items: center;
+}
+.ig-btn.sq { flex: none; width: 44px; }
+.ig-btn:active { opacity: .6; }
+
+.ig-hl { display: flex; gap: 14px; padding: 18px 16px 6px; overflow-x: auto; scrollbar-width: none; }
+.ig-hl::-webkit-scrollbar { display: none; }
+.ig-hl-item { flex: none; width: 78px; display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 12px; color: #f5f5f5; }
+.ig-hl-ring {
+  width: 78px; height: 78px; border-radius: 50%; padding: 3px; background: #3a3a3c;
+  display: grid; place-items: center;
+}
+.ig-hl-ring.new { background: none; border: 1.5px solid #3a3a3c; color: #f5f5f5; }
+.ig-hl-img { width: 100%; height: 100%; border-radius: 50%; border: 3px solid #000; background-size: cover; background-position: center; }
+
+/* Story viewer 9:16 */
+.story-wrap { position: absolute; inset: 0; background: #000; display: grid; place-items: center; }
+.story-box { position: relative; width: 100%; aspect-ratio: 9 / 16; max-height: 100%; overflow: hidden; background: #111; }
+.story-img { position: absolute; inset: 0; background-size: cover; background-position: center; }
+.story-bar { position: absolute; top: 10px; left: 10px; right: 10px; height: 2.5px; border-radius: 2px; background: rgba(255,255,255,.35); z-index: 2; }
+.story-bar i { display: block; height: 100%; width: 100%; background: #fff; border-radius: 2px; }
+.story-head { position: absolute; top: 22px; left: 12px; right: 12px; z-index: 2; display: flex; align-items: center; gap: 10px; color: #fff; font-size: 14px; font-weight: 600; text-shadow: 0 1px 4px rgba(0,0,0,.5); }
+.story-head .story-av { width: 32px; height: 32px; border-radius: 50%; border: 1px solid #fff; flex: none; background-size: cover; background-position: center; }
+.story-close { position: absolute; top: 22px; right: 12px; z-index: 3; color: #fff; font-size: 26px; line-height: 1; padding: 4px; }
+.story-grad { position: absolute; inset: 0; background: linear-gradient(rgba(0,0,0,.35), transparent 25%, transparent 75%, rgba(0,0,0,.4)); }
+
+.ig-private-note { text-align: center; font-size: 12px; color: #8e8e93; padding: 12px 16px; }
+.ig-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+.ig-cell { aspect-ratio: 3 / 4; }
+.ig-cell:active { opacity: .7; }
+.ig-empty { padding: 50px 20px; text-align: center; color: #8e8e93; font-size: 15px; }
+
+.ig-tabs { display: flex; border-top: .5px solid #262626; margin-top: 12px; }
+.ig-tab { flex: 1; height: 50px; display: grid; place-items: center; color: #8e8e93; position: relative; }
+.ig-tab.on { color: #f5f5f5; }
+.ig-tab.on::after { content: ""; position: absolute; bottom: 0; left: 18%; right: 18%; height: 1.5px; background: #f5f5f5; }
+
+.ig-bottom {
+  position: sticky; bottom: 0; display: flex; justify-content: space-around; align-items: center;
+  height: 58px; margin-top: 20px; background: #000; border-top: .5px solid #262626;
+}
+.ig-nav-btn { display: grid; place-items: center; width: 56px; height: 44px; }
+.ig-me-av { width: 28px; height: 28px; border-radius: 50%; border: 1px solid #f5f5f5; }
+
+/* ===== LINE ===== */
+.line-list { background: #fff; min-height: 100%; }
+.chat-row {
+  display: flex; align-items: center; gap: 12px; width: 100%;
+  padding: 12px 16px; border-bottom: .5px solid #eee;
+}
+.chat-row:active { background: #f0f0f0; }
+.chat-av { width: 52px; height: 52px; border-radius: 16px; flex: none; }
+.chat-name { font-size: 16px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.chat-last { font-size: 14px; color: #888; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 2px; }
+.chat-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex: none; }
+.chat-time { font-size: 12px; color: #999; }
+.badge {
+  background: #06c755; color: #fff; font-size: 11px; font-weight: 700;
+  min-width: 20px; height: 20px; border-radius: 10px; display: grid; place-items: center; padding: 0 6px;
+}
+.gcount { font-size: 12px; color: #999; font-weight: 400; }
+
+.app-page.chat-page { padding: 0; overflow: hidden; background: #b2c7d9; }
+.msgs {
+  position: absolute; top: 98px; bottom: 62px; left: 0; right: 0;
+  overflow-y: auto; padding: 10px 12px 20px;
+}
+.day-sep {
+  text-align: center; font-size: 12px; color: #fff; background: rgba(0, 0, 0, .2);
+  border-radius: 10px; padding: 3px 10px; width: fit-content; margin: 14px auto 8px;
+}
+.msg-row { display: flex; align-items: flex-end; gap: 6px; margin: 3px 0; }
+.msg-row.me { justify-content: flex-end; }
+.mini-av { width: 36px; height: 36px; border-radius: 50%; flex: none; align-self: flex-start; margin-top: 16px; }
+.mini-av.ghost { visibility: hidden; }
+.col { display: flex; flex-direction: column; min-width: 0; max-width: 78%; }
+.sender { font-size: 12px; color: #444; margin: 6px 0 2px 2px; }
+.pair { display: flex; align-items: flex-end; gap: 6px; }
+.bubble {
+  padding: 9px 12px; border-radius: 18px; font-size: 15px; line-height: 1.4;
+  white-space: pre-wrap; word-break: break-word; background: #fff; color: #000; max-width: 240px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .06);
+}
+.me .bubble { background: #b4ec8e; }
+.meta { font-size: 11px; color: #444; text-align: right; white-space: nowrap; line-height: 1.2; }
+.meta .read { color: #3a4a2a; font-weight: 600; }
+
+.inputbar {
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 5;
+  display: flex; gap: 8px; align-items: center;
+  padding: 8px 10px 26px; background: #f7f7f7; border-top: .5px solid var(--sep);
+}
+.inputbar input {
+  flex: 1; border: .5px solid #c6c6c8; border-radius: 18px; padding: 8px 12px;
+  background: #fff; outline: none; font-size: 15px;
+}
+.send { color: #06c755; font-weight: 600; padding: 8px 6px; }
+.send:active { opacity: .5; }
+
+/* ===== Foto di chat ===== */
+.photo-stack {
+  display: grid; gap: 3px; width: 220px; border-radius: 18px; overflow: hidden;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .06);
+}
+.photo-stack.n2 { grid-template-columns: 1fr 1fr; width: 226px; }
+.chat-photo {
+  position: relative; display: block; width: 100%;
+  padding-top: 133.333%;              /* rasio 3:4 */
+  background-color: #ddd;             /* warna cadangan jika file belum ada */
+  background-size: cover; background-position: center; background-repeat: no-repeat;
+  cursor: pointer;
+}
+.chat-photo:active { opacity: .8; }
+
+/* ===== Foto dengan keterangan ===== */
+.photo-wrap { display: flex; flex-direction: column; gap: 4px; width: 226px; }
+.photo-wrap .bubble { max-width: 226px; }
+
+/* ===== Kartu panggilan di chat ===== */
+.call-card {
+  display: flex; align-items: center; gap: 10px; width: 210px;
+  padding: 10px 12px; border-radius: 18px; background: #fff; color: #000; text-align: left;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .06);
+}
+.me .call-card { background: #b4ec8e; }
+.call-card:active { opacity: .75; }
+.call-ico { width: 34px; height: 34px; border-radius: 50%; flex: none; display: grid; place-items: center; }
+.call-txt { display: flex; flex-direction: column; min-width: 0; flex: 1; }
+.call-txt b { font-size: 15px; }
+.call-txt span { font-size: 13px; color: #666; }
+
+/* ===== Detail panggilan ===== */
+.call-detail {
+  position: absolute; top: 98px; left: 0; right: 0; bottom: 0; z-index: 20;
+  background: var(--bg); padding: 12px 16px; display: flex; flex-direction: column;
+}
+.cd-top { display: flex; }
+.cd-close { color: var(--blue); font-size: 17px; padding: 6px 0; }
+.cd-card { margin-top: 18px; background: #fff; border-radius: 16px; padding: 26px 18px; text-align: center; }
+.cd-icon { width: 64px; height: 64px; border-radius: 50%; margin: 0 auto 12px; display: grid; place-items: center; }
+.cd-title { font-size: 22px; font-weight: 700; }
+.cd-sub { font-size: 14px; color: var(--gray); margin-top: 4px; }
+.cd-rows { margin-top: 18px; text-align: left; }
+.cd-rows > div {
+  display: flex; justify-content: space-between; gap: 12px;
+  padding: 12px 0; border-bottom: .5px solid var(--sep); font-size: 16px;
+}
+.cd-rows span { color: var(--gray); flex: none; }
+.cd-rows b { font-weight: 500; text-align: right; }
+
+/* ===== Galeri ===== */
+/* Halaman galeri tidak menggulir sendiri. Hanya .gal-body yang digulir,
+   sehingga tab Foto/Video selalu tetap di tempatnya. */
+.gallery-page {
+  display: flex; flex-direction: column;
+  overflow: hidden; padding-bottom: 0;
+}
+.gallery-page .large-title { flex: none; padding-bottom: 6px; }
+
+.seg-wrap { flex: none; display: flex; justify-content: center; padding: 0 0 10px; }
+.seg {
+  display: flex; width: 190px; padding: 2px; border-radius: 8px; background: #e3e3e8;
+}
+.seg button {
+  flex: 1; height: 28px; border-radius: 6px;
+  font-size: 13px; font-weight: 600; color: #000;
+}
+.seg button.on { background: #fff; box-shadow: 0 1px 3px rgba(0, 0, 0, .15); }
+
+.gal-body {
+  flex: 1; min-height: 0; overflow-y: auto; padding-bottom: 40px;
+  scrollbar-width: none;
+}
+.gal-body::-webkit-scrollbar { display: none; }
+
+.photo-cell { position: relative; overflow: hidden; }
+.photo-cell video {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; pointer-events: none; background: #1c1c1e;
+}
+.play-badge {
+  position: absolute; left: 6px; bottom: 6px; z-index: 1;
+  color: #fff; font-size: 12px; text-shadow: 0 1px 3px rgba(0, 0, 0, .6);
+}
+
+/* Viewer */
+.gv { position: absolute; inset: 0; background: #fff; color: #000; }
+.gv-round {
+  position: absolute; top: 54px; width: 44px; height: 44px; border-radius: 50%;
+  background: #fff; box-shadow: 0 2px 10px rgba(0, 0, 0, .12);
+  display: grid; place-items: center; font-size: 18px; z-index: 3;
+}
+.gv-back { left: 14px; }
+.gv-more { right: 14px; letter-spacing: 1px; }
+.gv-pill {
+  position: absolute; top: 54px; left: 50%; transform: translateX(-50%); z-index: 3;
+  height: 44px; padding: 0 26px; border-radius: 22px; background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .12);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  font-size: 14px; white-space: nowrap;
+}
+.gv-pill b { font-weight: 600; }
+.gv-pill span { font-size: 12px; color: #555; }
+
+.gv-stage {
+  position: absolute; top: 110px; bottom: 150px; left: 0; right: 0;
+  display: flex; align-items: center; justify-content: center; overflow: hidden;
+}
+.gv-stage img,
+.gv-stage video {
+  display: block; max-width: 100%; max-height: 100%;
+  width: auto; height: auto; object-fit: contain;
+}
+
+.gv-strip {
+  position: absolute; left: 0; right: 0; bottom: 96px; height: 48px;
+  display: flex; gap: 4px; align-items: center; overflow-x: auto; padding: 0 12px;
+  scrollbar-width: none; z-index: 3;
+}
+.gv-strip::-webkit-scrollbar { display: none; }
+.gv-strip button {
+  position: relative; overflow: hidden;
+  flex: none; width: 36px; height: 44px; border-radius: 6px; opacity: .6;
+  border: 0; background-size: cover; background-position: center; background-color: #1c1c1e;
+}
+.gv-strip button video {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; pointer-events: none;
+}
+.gv-strip button.on { opacity: 1; outline: 2px solid #fff; outline-offset: -2px; }
+
+.gv-bar {
+  position: absolute; left: 14px; right: 14px; bottom: 30px; height: 44px; z-index: 3;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.gv-tool {
+  width: 44px; height: 44px; border-radius: 50%; background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .12); display: grid; place-items: center; font-size: 16px;
+}
+.gv-tools {
+  display: flex; align-items: center; gap: 22px; height: 44px; padding: 0 22px;
+  border-radius: 22px; background: #fff; box-shadow: 0 2px 10px rgba(0, 0, 0, .12);
+}
+.gv-tools button { font-size: 18px; color: #000; }
